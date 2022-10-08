@@ -1,0 +1,51 @@
+using System;
+
+namespace ConsoleApp15
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = new int[8] { 0, 3, 2, 1, 100, 2, 3, 5 };
+            // 1 способ сорт
+            int temp;
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[i] > array[j])
+                    {
+                        temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
+                }
+            }
+            // вывод
+            var str = string.Join(" ", array);
+            Console.WriteLine($"{str}");
+          
+            /* for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i]);
+            }
+            */
+           
+
+            // 2 метод сорт
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[i] == array[i + 1])
+                    {
+                        for (int c = 0; c < array.Length; c++)
+                        {
+                            Console.WriteLine(array[c]);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
